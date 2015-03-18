@@ -10,15 +10,14 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
-
+    frameworks: ['jasmine-jquery', 'jasmine'],
 
     // list of files / patterns to load in the browser
     files: [
       'node_modules/jquery/dist/jquery.js',
       'node_modules/backbone/node_modules/underscore/underscore.js',
       'node_modules/backbone/backbone.js',
-      'app/*.js',
+      'app/**/*.js',
       'test/**/*_spec.js'
     ],
 
@@ -64,6 +63,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
+    singleRun: true
   });
 };

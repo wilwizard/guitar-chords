@@ -4,126 +4,18 @@
     <script type="text/javascript" src='../node_modules/jquery/dist/jquery.js'></script>
     <script type="text/javascript" src="../node_modules/backbone/node_modules/underscore/underscore.js"></script>
     <script type="text/javascript" src="../node_modules/backbone/backbone-min.js"></script>
+
+    <script type="text/javascript" src="views/chordia_view.js"></script>
   </head>
  
   <body>
       
-    <div class="tuner">
-      <div class="string">
-        <div class="label">00</div>
-        <div class="label">01</div>
-        <div class="label">02</div>
-        <div class="label">03</div>
-        <div class="label">04</div>
-        <div class="label">05</div>
-        <div class="label">06</div>
-        <div class="label">07</div>
-        <div class="label">08</div>
-        <div class="label">09</div>
-        <div class="label">10</div>
-        <div class="label">11</div>
-      </div>
-      <div class="string off">
-        <!-- <input type="text" value="e"> -->
-        <div class="fret" data-fret="0"></div>
-        <div class="fret" data-fret="1"></div>
-        <div class="fret" data-fret="2"></div>
-        <div class="fret" data-fret="3"></div>
-        <div class="fret" data-fret="4"></div>
-        <div class="fret" data-fret="5"></div>
-        <div class="fret" data-fret="6"></div>
-        <div class="fret" data-fret="7"></div>
-        <div class="fret" data-fret="8"></div>
-        <div class="fret" data-fret="9"></div>
-        <div class="fret" data-fret="10"></div>
-        <div class="fret" data-fret="11"></div>
-        <div class="fret" data-fret="12"></div>
-      </div>
-      <div class="string off">
-        <input type="text" value="a">
-        <div class="fret" data-fret="0"></div>
-        <div class="fret" data-fret="1"></div>
-        <div class="fret" data-fret="2"></div>
-        <div class="fret" data-fret="3"></div>
-        <div class="fret" data-fret="4"></div>
-        <div class="fret" data-fret="5"></div>
-        <div class="fret" data-fret="6"></div>
-        <div class="fret" data-fret="7"></div>
-        <div class="fret" data-fret="8"></div>
-        <div class="fret" data-fret="9"></div>
-        <div class="fret" data-fret="10"></div>
-        <div class="fret" data-fret="11"></div>
-        <div class="fret" data-fret="12"></div>
-      </div>
-      <div class="string off">
-        <input type="text"  value="d">
-        <div class="fret" data-fret="0"></div>
-        <div class="fret" data-fret="1"></div>
-        <div class="fret" data-fret="2"></div>
-        <div class="fret" data-fret="3"></div>
-        <div class="fret" data-fret="4"></div>
-        <div class="fret" data-fret="5"></div>
-        <div class="fret" data-fret="6"></div>
-        <div class="fret" data-fret="7"></div>
-        <div class="fret" data-fret="8"></div>
-        <div class="fret" data-fret="9"></div>
-        <div class="fret" data-fret="10"></div>
-        <div class="fret" data-fret="11"></div>
-        <div class="fret" data-fret="12"></div>
-      </div>
-      <div class="string off">
-        <input type="text" value="g">
-        <div class="fret" data-fret="0"></div>
-        <div class="fret" data-fret="1"></div>
-        <div class="fret" data-fret="2"></div>
-        <div class="fret" data-fret="3"></div>
-        <div class="fret" data-fret="4"></div>
-        <div class="fret" data-fret="5"></div>
-        <div class="fret" data-fret="6"></div>
-        <div class="fret" data-fret="7"></div>
-        <div class="fret" data-fret="8"></div>
-        <div class="fret" data-fret="9"></div>
-        <div class="fret" data-fret="10"></div>
-        <div class="fret" data-fret="11"></div>
-        <div class="fret" data-fret="12"></div>
-      </div>
-      <div class="string off">
-        <input type="text" value="b">
-        <div class="fret" data-fret="0"></div>
-        <div class="fret" data-fret="1"></div>
-        <div class="fret" data-fret="2"></div>
-        <div class="fret" data-fret="3"></div>
-        <div class="fret" data-fret="4"></div>
-        <div class="fret" data-fret="5"></div>
-        <div class="fret" data-fret="6"></div>
-        <div class="fret" data-fret="7"></div>
-        <div class="fret" data-fret="8"></div>
-        <div class="fret" data-fret="9"></div>
-        <div class="fret" data-fret="10"></div>
-        <div class="fret" data-fret="11"></div>
-        <div class="fret" data-fret="12"></div>
-      </div>
-      <div class="string off">
-        <input type="text" value="e">
-        <div class="fret" data-fret="0"></div>
-        <div class="fret" data-fret="1"></div>
-        <div class="fret" data-fret="2"></div>
-        <div class="fret" data-fret="3"></div>
-        <div class="fret" data-fret="4"></div>
-        <div class="fret" data-fret="5"></div>
-        <div class="fret" data-fret="6"></div>
-        <div class="fret" data-fret="7"></div>
-        <div class="fret" data-fret="8"></div>
-        <div class="fret" data-fret="9"></div>
-        <div class="fret" data-fret="10"></div>
-        <div class="fret" data-fret="11"></div>
-        <div class="fret" data-fret="12"></div>
-      </div>
-      <h3>Chord</h3>
-      <div class="chord"></div>
-    </div>
+    <chordia></chordia>
 
- 
   </body>
+
+  <script type="text/javascript">
+    new Chordia({el: $('chordia')}).render();
+  </script>
  
 </html>
