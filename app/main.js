@@ -17,30 +17,7 @@ REVERSE_LOOKUP = {
 			11: 'B'
 };
 
-var Guitar = Backbone.Model.extend({
-	initialize: function(strings){
-		var notes = [];
-		this.strings = strings;
-		for(var i = 0; i < this.strings.length; i++){
-			var str = this.strings[i];
-			notes.push(str.note);
-		}
-		this.notes = notes;
-		this.setChord();
-	},
 
-	setChord: function(){
-		var notes = this.notes;
-		var root = notes[0];
-		var name = REVERSE_LOOKUP[root];
-		for(var i = 0; i < notes.length; i++){
-			var currentNote = notes[i];
-			if(mod(currentNote-root, 12) === 3) { name += 'm'; }
-			if(mod(currentNote-root, 12) === 4) { name += 'maj'; }
-		}
-		this.chord = name;
-	}
-});
 
 var GuitarString = Backbone.Model.extend({
 	initialize: function(options){

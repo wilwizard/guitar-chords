@@ -1,10 +1,7 @@
 Chordia = Backbone.View.extend({
 
 
-
-
   render: function(){
-    console.log('calling');
     var $fret = $('<div class="fret">');
     var $string = $('<div class="string">');
     var $fretBoard = $('<div class="board">');

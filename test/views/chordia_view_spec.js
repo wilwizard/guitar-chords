@@ -6,7 +6,7 @@ describe('Chordia', function(){
     view = new Chordia({el: $dom})
   });
 
-  ddescribe('#render', function(){
+  describe('#render', function(){
     beforeEach(function(){
       view.render();  
     });
