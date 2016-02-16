@@ -11,7 +11,7 @@ describe("Guitar", function(){
     guitar.setUp();
   };
 
-  ddescribe("#initialize", function(){
+  describe("#initialize", function(){
     createGuitar();    
 
     it("converts notes to numbers", function(){
