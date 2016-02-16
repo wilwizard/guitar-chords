@@ -1,0 +1,12 @@
+{
+  "name": "guitar-chordia",
+  "version": "0.0.0",
+  "author": "Will Bendix <wcbendix@gmail.com>",
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "karma": "^0.13.21"
+  }
+}
