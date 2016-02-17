@@ -7,7 +7,7 @@ describe('GuitarView', function(){
     view = new GuitarView({el: $dom})
   });
 
-  describe('when clicking on a fret', function(){
+  xdescribe('when clicking on a fret', function(){
     it("selects the fret", function(){
 
       var firstFret = view.$el.find('.fret')[0];

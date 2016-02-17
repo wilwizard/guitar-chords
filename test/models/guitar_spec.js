@@ -2,21 +2,22 @@ describe("Guitar", function(){
 
   var guitar;
 
-  function createGuitar(){
-    guitar = new Guitar({
-      tuning: ["E", "A"], 
-      frets: [0,2]
-    });
-
-    guitar.setUp();
+  function createGuitar(options){
+    guitar = new Guitar(options);
   };
 
-  describe("#initialize", function(){
-    createGuitar();    
+  describe("initialization", function(){
 
     it("converts notes to numbers", function(){
-      expect(guitar.get('tuning')).toEqual(["E","A"]);
-      expect(guitar.get('notes')).toEqual([4,11]);
+      createGuitar({tuning: ['E', 'A']});
+      expect(guitar.tuningNotes).toEqual(["E","A"]);
+      expect(guitar.tuningInts).toEqual([4,9]);
+    });
+
+    it("calculates frets", function(){
+      createGuitar({tuning: ['E','A','D'], tabs: [5,4,2]});
+      expect(guitar.fretInts).toEqual([9,1,4]);
+      expect(guitar.fretNotes).toEqual(['A','Db','E']);
     });
   });
 

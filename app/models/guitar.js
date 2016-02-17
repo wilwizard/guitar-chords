@@ -34,21 +34,19 @@ numberToNote = {
 };
 
 
-var Guitar = Backbone.Model.extend({
+var Guitar = function(options){
+  this.tuningNotes = options.tuning;
+  this.tuningInts = _.map(this.tuningNotes, function(note){
+    return noteToNumber[note];
+  });
+  this.tabs = options.tabs;
+  this.fretNotes = [];
+  this.fretInts = []
+  for(var i=0; i < this.tuningInts.length; i++){
+    var tab = this.tabs ? this.tabs[i] : 0;
+    var noteNum = (this.tuningInts[i] + tab)%12;
+    this.fretInts.push(noteNum);
+    this.fretNotes.push(numberToNote[noteNum]);
+  }
+};
 
-  setUp: function(){
-    var tuning = this.get('tuning');
-    var frets = this.get('frets');
-    var notes = [];
-    
-    for(var i=0; i < tuning.length; i++){
-      notes[i] = noteToNumber[tuning[i]] + frets[i]
-    };
-
-    this.set({notes: notes});
-  },
-
-  
-
-  
-});

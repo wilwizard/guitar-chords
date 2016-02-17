@@ -7,24 +7,24 @@ describe("pubsub", function(){
     expect(stub.calledWith()).toEqual(true);
   });
 
-  it("can subscribe multiple functions", function(){\
+  it("can subscribe multiple functions", function(){
     var stubOne = sinon.stub();
     var stubTwo = sinon.stub();
     pubsub.subscribe('myEvent', stubOne);
     pubsub.subscribe('myEvent', stubTwo);
     pubsub.publish('myEvent');
     expect(stubOne.calledWith()).toEqual(true);
-    expect(stubTwo.calledWith()).toEqual(true);)
+    expect(stubTwo.calledWith()).toEqual(true);
   });
 
-  it("won't call functions when not called", function(){\
+  it("won't call functions when not called", function(){
     var stubOne = sinon.stub();
     var stubTwo = sinon.stub();
     pubsub.subscribe('firstEvent', stubOne);
     pubsub.subscribe('secondEvent', stubTwo);
     pubsub.publish('firstEvent');
     expect(stubOne.calledWith()).toEqual(true);
-    expect(stubTwo.calledWith()).toEqual(false);)
+    expect(stubTwo.calledWith()).toEqual(false);
   });
 
   
