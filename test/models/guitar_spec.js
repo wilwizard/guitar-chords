@@ -23,22 +23,27 @@ describe("Guitar", function(){
   describe("#new", function(){
 
     it("converts notes to numbers", function(){
-      createGuitar({tuning: ['E', 'A']});
+      createGuitar({strings: [
+        {string: 'E', tab: 0},
+        {string: 'A', tab: 2}
+      ]});
       
-      expect(_.map(guitar.strings(), function(string){
-        return string.
-      }).toEqual(["E","A"]);
-      expect(guitar.tuningInts).toEqual([4,9]);
+      expect(transpose(guitar.strings()).stringNum).toEqual([4,9]);
     });
 
     it("calculates frets", function(){
-      createGuitar({tuning: ['E','A','D'], tabs: [5,4,2]});
-      expect(guitar.fretInts).toEqual([9,1,4]);
-      expect(guitar.fretNotes).toEqual(['A','Db','E']);
+      createGuitar({strings: [
+        {string: 'E', tab: 3},
+        {string: 'A', tab: 2},
+        {string: 'D', tab: 0}
+      ]});
+      
+      expect(transpose(guitar.strings()).noteNum).toEqual([7,11,2]);
+      expect(transpose(guitar.strings()).note).toEqual(['G','B','D']);
     });
   });
 
-  describe("#changeNote", function(){
+  xdescribe("#changeNote", function(){
     
     it("changes the string", function(){
       createGuitar({tuning: ['E','A','D'], tabs: [5,4,2]});

@@ -11,28 +11,24 @@
  
   <body>
       
-    <input class="tuning-input" data-string='0' type="text" value="E">
-    <input class="tuning-input" data-string='1' type="text" value="B">
-    <input class="tuning-input" data-string='2' type="text" value="G">
-    <input class="tuning-input" data-string='3' type="text" value="D">
-    <input class="tuning-input" data-string='4' type="text" value="A">
-    <input class="tuning-input" data-string='5' type="text" value="E">
-
-    <div data-bind="foreach: tuningNotes">
-      NUM:<div data-bind="text: num"></div><input data-bind="value: num">
-      TAB:<div data-bind="text: tab"></div>
+    <div data-bind="foreach: strings">
+      <div>
+        <span data-bind="text: note"></span>
+        <span data-bind="text: stringNum"></span>
+      <div>
     </div>
 
   </body>
 
   <script>
 
-    var myGuitar = {
-      tuningNotes: [
-        {num: ko.observable(0), tab: 2},
-        {num: 4, tab: 4}
+    var myGuitar = new Guitar({
+      strings:[
+        {string: 'E', tab: 3},
+        {string: 'A', tab: 2},
+        {string: 'D', tab: 0}
       ]
-    }
+    });
     ko.applyBindings(myGuitar);
 
   </script>

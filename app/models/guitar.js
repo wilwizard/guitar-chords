@@ -35,19 +35,17 @@ numberToNote = {
 
 
 var Guitar = function(options){
-  this.tuningNotes = ko.observableArray(options.tuning);
-  this.tuningInts = _.map(this.tuningNotes(), function(note){
-    return noteToNumber[note];
-  });
-  this.tabs = options.tabs;
-  this.fretNotes = [];
-  this.fretInts = []
-  for(var i=0; i < this.tuningInts.length; i++){
-    var tab = this.tabs ? this.tabs[i] : 0;
-    var noteNum = (this.tuningInts[i] + tab)%12;
-    this.fretInts.push(noteNum);
-    this.fretNotes.push(numberToNote[noteNum]);
+
+  function addTabs(string, tab){
+    return (string + tab)%12;
   }
+
+  this.strings = ko.observableArray(_.map(options.strings, function(str){
+    var stringNum = noteToNumber[str.string]
+    var noteNum = addTabs(stringNum, str.tab);
+    return _.extend(str, {stringNum: stringNum, noteNum: noteNum, note: numberToNote[noteNum]});
+  }));
+
 };
 
 Guitar.prototype.changeNote = function(string, fret){
