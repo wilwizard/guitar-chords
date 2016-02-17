@@ -35,8 +35,8 @@ numberToNote = {
 
 
 var Guitar = function(options){
-  this.tuningNotes = options.tuning;
-  this.tuningInts = _.map(this.tuningNotes, function(note){
+  this.tuningNotes = ko.observableArray(options.tuning);
+  this.tuningInts = _.map(this.tuningNotes(), function(note){
     return noteToNumber[note];
   });
   this.tabs = options.tabs;

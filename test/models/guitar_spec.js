@@ -6,11 +6,28 @@ describe("Guitar", function(){
     guitar = new Guitar(options);
   };
 
+  function transpose(strings){
+    var obj = {};
+    strings.forEach(function(string){
+      for(key in string){
+        if(obj[key]){
+          obj[key].push(string[key]);
+        } else {
+          obj[key] = [string[key]];
+        }
+      };
+    });
+    return obj;
+  };
+
   describe("#new", function(){
 
     it("converts notes to numbers", function(){
       createGuitar({tuning: ['E', 'A']});
-      expect(guitar.tuningNotes).toEqual(["E","A"]);
+      
+      expect(_.map(guitar.strings(), function(string){
+        return string.
+      }).toEqual(["E","A"]);
       expect(guitar.tuningInts).toEqual([4,9]);
     });
 

@@ -4,8 +4,9 @@
     <script type="text/javascript" src='../node_modules/jquery/dist/jquery.js'></script>
     <script type="text/javascript" src="../node_modules/backbone/node_modules/underscore/underscore.js"></script>
     <script type="text/javascript" src="../node_modules/backbone/backbone-min.js"></script>
-
+    <script type="text/javascript" src="../node_modules/knockout/build/output/knockout-latest.js"></script>
     <script type="text/javascript" src="models/guitar.js"></script>
+
   </head>
  
   <body>
@@ -17,8 +18,23 @@
     <input class="tuning-input" data-string='4' type="text" value="A">
     <input class="tuning-input" data-string='5' type="text" value="E">
 
-    
+    <div data-bind="foreach: tuningNotes">
+      NUM:<div data-bind="text: num"></div><input data-bind="value: num">
+      TAB:<div data-bind="text: tab"></div>
+    </div>
 
   </body>
+
+  <script>
+
+    var myGuitar = {
+      tuningNotes: [
+        {num: ko.observable(0), tab: 2},
+        {num: 4, tab: 4}
+      ]
+    }
+    ko.applyBindings(myGuitar);
+
+  </script>
 
 </html>

@@ -17,6 +17,7 @@ module.exports = function(config) {
       'node_modules/jquery/dist/jquery.js',
       'node_modules/backbone/node_modules/underscore/underscore.js',
       'node_modules/backbone/backbone.js',
+      'node_modules/knockout/build/output/knockout-latest.js',
       'app/**/*.js',
       'test/**/*_spec.js'
     ],
