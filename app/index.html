@@ -5,17 +5,20 @@
     <script type="text/javascript" src="../node_modules/backbone/node_modules/underscore/underscore.js"></script>
     <script type="text/javascript" src="../node_modules/backbone/backbone-min.js"></script>
 
-    <script type="text/javascript" src="views/chordia_view.js"></script>
+    <script type="text/javascript" src="models/guitar.js"></script>
   </head>
  
   <body>
       
-    <chordia></chordia>
+    <input class="tuning-input" data-string='0' type="text" value="E">
+    <input class="tuning-input" data-string='1' type="text" value="B">
+    <input class="tuning-input" data-string='2' type="text" value="G">
+    <input class="tuning-input" data-string='3' type="text" value="D">
+    <input class="tuning-input" data-string='4' type="text" value="A">
+    <input class="tuning-input" data-string='5' type="text" value="E">
+
+    
 
   </body>
 
-  <script type="text/javascript">
-    new Chordia({el: $('chordia')}).render();
-  </script>
- 
 </html>

@@ -50,3 +50,11 @@ var Guitar = function(options){
   }
 };
 
+Guitar.prototype.changeNote = function(string, fret){
+  this.fretInts[string] = (fret + this.tuningInts[string])%12;
+  this.fretNotes[string] = numberToNote[this.fretInts[string]];
+};
+
+Guitar.prototype.currentChords = function(string, fret){
+
+}

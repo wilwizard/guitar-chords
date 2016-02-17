@@ -6,7 +6,7 @@ describe("Guitar", function(){
     guitar = new Guitar(options);
   };
 
-  describe("initialization", function(){
+  describe("#new", function(){
 
     it("converts notes to numbers", function(){
       createGuitar({tuning: ['E', 'A']});
@@ -19,6 +19,35 @@ describe("Guitar", function(){
       expect(guitar.fretInts).toEqual([9,1,4]);
       expect(guitar.fretNotes).toEqual(['A','Db','E']);
     });
+  });
+
+  describe("#changeNote", function(){
+    
+    it("changes the string", function(){
+      createGuitar({tuning: ['E','A','D'], tabs: [5,4,2]});
+      guitar.changeNote(0,0);
+      expect(guitar.fretInts).toEqual([4,1,4]);
+      expect(guitar.fretNotes).toEqual(['E','Db','E']);
+    });
+  });
+
+  describe("#currentChords", function(){
+
+    it("handles no data", function(){
+      createGuitar();
+      expect(guitar.currentChords).toBeEmpty();
+    });
+
+    it("generates major Chords", function(){
+      createGuitar({tuning:['E','A','D'], tabs:[3,2,0]});
+      expect(guitar.currentChords()).toContain('Gmaj');
+    });
+
+    it("generates minor Chords", function(){
+      createGuitar({tuning:['E','A','D'], tabs:[3,1,0]});
+      expect(guitar.currentChords()).toContain('Gmin');
+    });
+
   });
 
   
