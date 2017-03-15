@@ -1,8 +1,22 @@
+body {
+  font-family: sans-serif;
+}
+
+header {
+  height: 50px;
+}
+
 .tab {
     display: inline-block;
-    width: 20px;
-    height: 10px;
+    width: 40px;
+    height: 15px;
     background-color: brown;
+}
+
+.nut {
+  background-color: black;
+  width: 10px;
+  height: 15px;
 }
 
 .tab.tabbed {

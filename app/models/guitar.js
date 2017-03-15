@@ -58,30 +58,34 @@ var String = function(options){
 
   var self = this;
 
-  this.string = ko.observable(options.string);
-  this.tab = ko.observable(options.tab);
+  self.string = ko.observable(options.string);
+  self.tab = ko.observable(options.tab);
 
-  this.stringNum = ko.computed(function(){
+  self.stringNum = ko.computed(function(){
     return noteToNumber[self.string()];
-  }, this);
+  });
 
-  this.noteNum = ko.computed(function(){
-    return addTabs(this.stringNum(), this.tab());
-  }, this);
+  self.noteNum = ko.computed(function(){
+    return addTabs(self.stringNum(), self.tab());
+  });
 
-  this.note = ko.computed(function(){
-    return numberToNote[this.noteNum()];
-  }, this);
+  self.note = ko.computed(function(){
+    return numberToNote[self.noteNum()];
+  });
 };
 
 var Guitar = function(options){
   var self = this;
 
   self.availableNotes = ko.observableArray(availableNotes);
+  self.stringsRaw = ko.observableArray(options.strings);
 
-  self.strings = ko.observableArray(_.map(options.strings, function(str){
-    return new String(str);
-  }));
+  self.strings = ko.computed(function(){
+    return _.map(self.stringsRaw(), function(str){
+      console.log(str);
+      return new String(str);
+    });
+  });
 
   self.stringNumbers = ko.computed(function(){
     return _.map(self.strings(), function(str){

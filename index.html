@@ -10,20 +10,50 @@
   </head>
  
   <body>
+    <header>
+      TUNINGS:
+      <span data-bind="click: function(){ stringsRaw([{string: 'E', tab: 0}, {string: 'B', tab: 0}, {string: 'G', tab: 0}, {string: 'D', tab: 0}, {string: 'A', tab: 0}, {string: 'E', tab: 0}]); }">Standard</span>
+      <span data-bind="click: function(){ stringsRaw([{string: 'Eb', tab: 0}, {string: 'Bb', tab: 0}, {string: 'F#', tab: 0}, {string: 'Db', tab: 0}, {string: 'Ab', tab: 0}, {string: 'Eb', tab: 0}]); }">Eb</span>
+      <span data-bind="click: function(){ stringsRaw([{string: 'E', tab: 0}, {string: 'B', tab: 0}, {string: 'G', tab: 0}, {string: 'D', tab: 0}, {string: 'A', tab: 0}, {string: 'D', tab: 0}]); }">Drop D</span>
+      <span data-bind="click: function(){ stringsRaw([{string: 'D', tab: 0}, {string: 'A', tab: 0}, {string: 'G', tab: 0}, {string: 'D', tab: 0}, {string: 'A', tab: 0}, {string: 'D', tab: 0}]); }">DADGAD</span>
+      <span data-bind="click: function(){ stringsRaw([{string: 'D', tab: 0}, {string: 'A', tab: 0}, {string: 'F#', tab: 0}, {string: 'D', tab: 0}, {string: 'A', tab: 0}, {string: 'D', tab: 0}]); }">Open D</span>
+      <span data-bind="click: function(){ stringsRaw([{string: 'D', tab: 0}, {string: 'B', tab: 0}, {string: 'G', tab: 0}, {string: 'D', tab: 0}, {string: 'G', tab: 0}, {string: 'D', tab: 0}]); }">Open G</span>
+
+    </header>
     <div data-bind="foreach: strings">
       <div>
         <select data-bind='options: $parent.availableNotes, value: string'></select>
-        <span data-bind="text: tab"></span>
-        <span class="tab" data-bind="click: function(){ tab(0); }, css: {tabbed: tab() === 0}"></span>
+        <span class="tab nut" data-bind="click: function(){ tab(0); }, css: {tabbed: tab() === 0}"></span>
         <span class="tab" data-bind="click: function(){ tab(1); }, css: {tabbed: tab() === 1}"></span>
         <span class="tab" data-bind="click: function(){ tab(2); }, css: {tabbed: tab() === 2}"></span>
-        <span class="tab" data-bind="click: function(){ tab(3); }, css: {tabbed: tab() === 3}"></span>
+        <span class="tab dot" data-bind="click: function(){ tab(3); }, css: {tabbed: tab() === 3}"></span>
         <span class="tab" data-bind="click: function(){ tab(4); }, css: {tabbed: tab() === 4}"></span>
-        <span class="tab" data-bind="click: function(){ tab(5); }, css: {tabbed: tab() === 5}"></span>
+        <span class="tab dot" data-bind="click: function(){ tab(5); }, css: {tabbed: tab() === 5}"></span>
         <span class="tab" data-bind="click: function(){ tab(6); }, css: {tabbed: tab() === 6}"></span>
-        <span class="tab" data-bind="click: function(){ tab(7); }, css: {tabbed: tab() === 7}"></span>
+        <span class="tab dot" data-bind="click: function(){ tab(7); }, css: {tabbed: tab() === 7}"></span>
         <span class="tab" data-bind="click: function(){ tab(8); }, css: {tabbed: tab() === 8}"></span>
-        <span class="tab" data-bind="click: function(){ tab(9); }, css: {tabbed: tab() === 9}"></span>
+        <span class="tab dot" data-bind="click: function(){ tab(9); }, css: {tabbed: tab() === 9}"></span>
+        <span class="tab" data-bind="click: function(){ tab(10); }, css: {tabbed: tab() === 10}"></span>
+        <span class="tab" data-bind="click: function(){ tab(11); }, css: {tabbed: tab() === 11}"></span>
+        <span class="tab double-dot" data-bind="click: function(){ tab(12); }, css: {tabbed: tab() === 12}"></span>
+        <span class="tab" data-bind="click: function(){ tab(13); }, css: {tabbed: tab() === 13}"></span>
+        <span class="tab" data-bind="click: function(){ tab(14); }, css: {tabbed: tab() === 14}"></span>
+        <span class="tab dot" data-bind="click: function(){ tab(15); }, css: {tabbed: tab() === 15}"></span>
+        <span class="tab" data-bind="click: function(){ tab(16); }, css: {tabbed: tab() === 16}"></span>
+        <span class="tab dot" data-bind="click: function(){ tab(17); }, css: {tabbed: tab() === 17}"></span>
+        <span class="tab" data-bind="click: function(){ tab(18); }, css: {tabbed: tab() === 18}"></span>
+        <span class="tab dot" data-bind="click: function(){ tab(19); }, css: {tabbed: tab() === 19}"></span>
+        <span class="tab" data-bind="click: function(){ tab(20); }, css: {tabbed: tab() === 20}"></span>
+        <span class="tab dot" data-bind="click: function(){ tab(21); }, css: {tabbed: tab() === 21}"></span>
+        <span class="tab" data-bind="click: function(){ tab(22); }, css: {tabbed: tab() === 22}"></span>
+        <span class="tab" data-bind="click: function(){ tab(23); }, css: {tabbed: tab() === 23}"></span>
+        <span class="tab double-dot" data-bind="click: function(){ tab(24); }, css: {tabbed: tab() === 24}"></span>
+
+
+
+
+
+
 
         <span data-bind="text: note"></span>
       </div>
