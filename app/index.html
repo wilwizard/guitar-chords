@@ -10,13 +10,19 @@
   </head>
  
   <body>
+
+
       
     <div data-bind="foreach: strings">
       <div>
-        <span data-bind="text: note"></span>
+        <input data-bind='value: string, valueUpdate: "keyup"'/>
         <span data-bind="text: stringNum"></span>
-      <div>
+        <input data-bind="textInput: tab"/>  
+        <span data-bind="text: note"></span>
+      </div>
     </div>
+
+    <div data-bind="text: currentChords"></div>
 
   </body>
 
@@ -24,9 +30,12 @@
 
     var myGuitar = new Guitar({
       strings:[
-        {string: 'E', tab: 3},
+        {string: 'E', tab: 0},
+        {string: 'B', tab: 0},
+        {string: 'G', tab: 0},
+        {string: 'D', tab: 2},
         {string: 'A', tab: 2},
-        {string: 'D', tab: 0}
+        {string: 'E', tab: 0}
       ]
     });
     ko.applyBindings(myGuitar);
