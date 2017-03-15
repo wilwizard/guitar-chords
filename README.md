@@ -1,4 +1,4 @@
-#Guitar
+# Guitar Chords
 
 To start:
 
@@ -15,4 +15,4 @@ To run tests:
 ./node_modules/karma/bin/karma start
 ```
 
-
+Live example can be found [here](http://wilwizard.github.io/guitar-chords/)
