@@ -33,6 +33,8 @@ numberToNote = {
       11: 'B'
 };
 
+availableNotes = ['C','Db','D','Eb','E','F','F#','G','Ab','A','Bb','B'];
+
 
 Number.prototype.mod = function(n) {
     return ((this%n)+n)%n;
@@ -74,6 +76,9 @@ var String = function(options){
 
 var Guitar = function(options){
   var self = this;
+
+  self.availableNotes = ko.observableArray(availableNotes);
+
   self.strings = ko.observableArray(_.map(options.strings, function(str){
     return new String(str);
   }));

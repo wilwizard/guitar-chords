@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="app/stylesheets/guitar.css"/>
+    <script type="text/javascript" src='node_modules/jquery/dist/jquery.js'></script>
+    <script type="text/javascript" src="node_modules/knockout/build/output/knockout-latest.js"></script>
+    <script type="text/javascript" src="node_modules/underscore/underscore.js"></script>
+    <script type="text/javascript" src="app/models/chordParser.js"></script>
+    <script type="text/javascript" src="app/models/guitar.js"></script>
+
+  </head>
+ 
+  <body>
+    <div data-bind="foreach: strings">
+      <div>
+        <select data-bind='options: $parent.availableNotes, value: string'></select>
+        <span data-bind="text: tab"></span>
+        <span class="tab" data-bind="click: function(){ tab(0); }, css: {tabbed: tab() === 0}"></span>
+        <span class="tab" data-bind="click: function(){ tab(1); }, css: {tabbed: tab() === 1}"></span>
+        <span class="tab" data-bind="click: function(){ tab(2); }, css: {tabbed: tab() === 2}"></span>
+        <span class="tab" data-bind="click: function(){ tab(3); }, css: {tabbed: tab() === 3}"></span>
+        <span class="tab" data-bind="click: function(){ tab(4); }, css: {tabbed: tab() === 4}"></span>
+        <span class="tab" data-bind="click: function(){ tab(5); }, css: {tabbed: tab() === 5}"></span>
+        <span class="tab" data-bind="click: function(){ tab(6); }, css: {tabbed: tab() === 6}"></span>
+        <span class="tab" data-bind="click: function(){ tab(7); }, css: {tabbed: tab() === 7}"></span>
+        <span class="tab" data-bind="click: function(){ tab(8); }, css: {tabbed: tab() === 8}"></span>
+        <span class="tab" data-bind="click: function(){ tab(9); }, css: {tabbed: tab() === 9}"></span>
+
+        <span data-bind="text: note"></span>
+      </div>
+    </div>
+
+    <div data-bind="text: currentChords"></div>
+
+  </body>
+
+  <script>
+
+    var myGuitar = new Guitar({
+      strings:[
+        {string: 'E', tab: 0},
+        {string: 'B', tab: 0},
+        {string: 'G', tab: 0},
+        {string: 'D', tab: 2},
+        {string: 'A', tab: 2},
+        {string: 'E', tab: 0}
+      ]
+    });
+    ko.applyBindings(myGuitar);
+
+  </script>
+
+</html>
