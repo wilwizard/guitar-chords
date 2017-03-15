@@ -2,17 +2,13 @@
 <html>
   <head>
     <script type="text/javascript" src='../node_modules/jquery/dist/jquery.js'></script>
-    <script type="text/javascript" src="../node_modules/backbone/node_modules/underscore/underscore.js"></script>
-    <script type="text/javascript" src="../node_modules/backbone/backbone-min.js"></script>
     <script type="text/javascript" src="../node_modules/knockout/build/output/knockout-latest.js"></script>
+    <script type="text/javascript" src="../node_modules/underscore/underscore.js"></script>
     <script type="text/javascript" src="models/guitar.js"></script>
 
   </head>
  
   <body>
-
-
-      
     <div data-bind="foreach: strings">
       <div>
         <input data-bind='value: string, valueUpdate: "keyup"'/>
