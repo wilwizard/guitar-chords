@@ -47,17 +47,7 @@ var makeRoot = function(notes, root){
   return temp;
 };
 
-var isMajor = function(notes) {
-  var hasFifth = _.contains(notes, 7);
-  var hasThird = _.contains(notes, 4);
-  return hasFifth & hasThird;
-};
 
-var isMinor = function(notes) {
-  var hasFifth = _.contains(notes, 7);
-  var hasMinorThird = _.contains(notes, 3);
-  return hasFifth & hasMinorThird;
-};
 
 var String = function(options){
   function addTabs(string, tab){
@@ -99,13 +89,11 @@ var Guitar = function(options){
     var chords = [];
 
     for (var x = 0; x < numbers.length; x++) {
-      var ajusted = makeRoot(numbers, numbers[x]);
-      console.log(ajusted);
+      var ajusted = makeRoot(numbers, numbers[x]).sort();
       var root = numbers[x];
-      if (isMajor(ajusted)) {
-        chords.push(numberToNote[root] + 'maj');
-      } else if (isMinor(ajusted)) {
-        chords.push(numberToNote[root] + 'min');
+      var chordString = chordParser(ajusted);
+      if (chordString) {
+        chords.push(numberToNote[root] + chordString);
       }
     }
 
